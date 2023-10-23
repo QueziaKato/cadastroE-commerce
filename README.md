@@ -6,10 +6,9 @@
 
 [Fontes consultadas](#fontes-consultadas)
  
- ### Formulário de Cadastro E-commerce 🛍️
+ # Formulário de Cadastro E-commerce 🛍️
 
-
- ## 📋 Descrição
+ ## 📋 Descrição 
 
 ## 🔧 Funcionalidades 
   
