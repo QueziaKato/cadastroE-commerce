@@ -3,60 +3,51 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <h1> Formulário de Cadastro E-commerce</h1>
+    <title> Formulário de Cadastro E-commerce</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='cadastro.css'>
     <script src='main.js'></script>
 </head>
 <body>
-    <div id="login">
-        <form>
-     
-          <h1>Cadastre-se</h1>
-    
-          <label>Nome</label><br>
-          <input type="text" id="nome"><br>
-    
-         <label>Data de Nascimento</label><br>
-         <input type="date" id="data de nascimento"><br>
-    
-        <label>CPF</label><br>
-       <input type="number" id="CPF"><br>
-    
-      <label>Email</label><br>
-      <input type="email" id="email"><br>
-    
-    <label>Telefone</label><br>
-    <input type="tel" id="telefone"><br>
-    
-     <label>CEP</label><br>
-     <input type="number"id="CEP"><br>
-    
-      <label>Endereço</label><br>
-      <input type="text" id="Endereço"><br>
-    
-       <label>Número</label><br>
-      <input type="number" id="Número"><br>
-    
-      <label>Complemento</label><br>
-     <input type="text" id="Complemento"><br>
-    
-    <label>Bairro</label><br>
-    <input type="text" id="Bairro"><br>
-    
-     <label>Estado</label><br>
-    <input type="text" id="Estado"><br>
-    
-    <label>Ponto de referência</label><br>
-    <input type="text" id="Ptr"><br>
-    
-    <label>Senha</label><br>
-    <input type="password" id="Senha"><br>
-    
-    <label>Confirmação de senha</label><br>
-    <input type="password" id="Confirmação de senha"><br>
-    
-    <button onclick="Verificar()">Verificar</button><br>
-    <a href="" id="esqueceu">Esqueceu a senha?</a>
+    <h1> Projeto de Cadastro</h1> 
+
+    <form class="row g-2">
+      <div class="col-md-6">
+          <label for="inputZip" class="form-label">CEP</label>
+          <input type="text" class="form-control" id="cep">
+        </div>
+  
+      <div class="col-10">
+        <label for="inputAddress" class="form-label">Endereço</label>
+        <input type="text" class="form-control" id="rua" placeholder="Joaquim Nabuco">
+      </div>
+  
+      <div class="col-1">
+        <label for="inputAddress" class="form-label">Numero</label>
+        <input type="text" class="form-control" id="numero" placeholder="1234">
+      </div>
+  
+      <div class="col-4">
+        <label for="inputAddress2" class="form-label">Bairro</label>
+        <input type="text" class="form-control" id="bairro" >
+      </div>
+  
+      <div class="col-md-3">
+        <label for="inputCity" class="form-label">Cidade</label>
+        <input type="text" class="form-control" id="cidade">
+      </div>
+  
+      <div class="col-md-4">
+        <label for="inputState" class="form-label">Estado</label>
+        <input id="estado" class="form-control">
+      </div>
+      
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </div>
+    </form>
+  <script type="text/javascript" src="./controller.js">
+  </script>
+  
 </body>
-</html>
+</html>  

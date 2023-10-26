@@ -1,26 +1,44 @@
-//#################
+'use restrict'; //Modo restrito
 
-//Código de validação de formulário de Cadastro E-commerce
+//Limpar formulário
+const limparFormulario = (endereco) => {
+    document.getElementById('rua').value = '';
+    document.getElementById('bairro').value = '';
+    document.getElementById('cidade').value = '';
+    document.getElementById('estado').value = '';
+}
+//Verifica se CEP é válido
+const eNumero = (numero) => /^[0-9]+$/.test(numero);
+const cepValido =(cep) => cep.length ==8 && eNumero(cep);
 
-function verificar() {
-    let Nome = document.getElementById('nome').value;
-    let DatadeNascimento = document.getElementById('dtnasc').value;
-    let CPF = document.getElementById('CPF').value;
-    let Email = document.getElementById('email').value;
-    let telefone = document.getElementById('telefone').value;
-    let CEP = document.getElementById('CEP').value;
-    let Endereço = document.getElementById('Endereco').value;
-    let Numero = document.getElementById('Numero').value;
-    let Complemento = document.getElementById('Complemento').value;
-    let Bairro = document.getElementById('Bairro').value;
-    let Estado = document.getElementById('Estado').value;
-    let Ptr = document.getElementById('Ptr').value;
-    let confirmSenha = document.getElementById('confirmsenha').value;
-    let senha = document.getElementById('Senha').value; 
-    {
-    if (!Nome || !DatadeNascimento || !CPF || !Email || !telefone || !CEP || !Endereço || !Numero || !Complemento || !Bairro || !Estado || !Ptr || !confirmSenha || !senha) {
-   alert("Campo de preenchimento obrigatório");
-    }else
-    alert("Campos preenchidos com sucesso!");
+//preenche campos do formulário
+const preencherFormulario = (endereco) =>{
+    document.getElementById('rua').value = endereco.logradouro;
+    document.getElementById('bairro').value = endereco.bairro;
+    document.getElementById('cidade').value = endereco.localidade;
+    document.getElementById('estado').value = endereco.uf;
+}
+
+/*
+Função para consumo de API
+utilizando a função di tipo assincronica*/
+
+const pesquisarCep = async() =>{
+    limparFormulario();
+    const url = `https|z://viacep.com.br/ws/${cep.value}/json/`;
+    if(cepValido(cep.value)){
+        const dados = await fetch(url);
+        const addres = await dados.json();
+
+        if(addres.hasOwnProperty('erro')){
+            alert('CEP não encontrado');
+        }else{
+            preencherFormulario(addres);
+        }
+    }else{
+        alert('CEP incorreto');
     }
 }
+
+//adiciona um evento DOM, no input CEP
+document.getElementById('cep').addEventListener('focusout',pesquisarCep);
